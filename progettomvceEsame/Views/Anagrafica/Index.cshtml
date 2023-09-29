@@ -1,0 +1,35 @@
+﻿@model IEnumerable<progettomvceEsame.Models.Anagrafica>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista di tutti i trasgressori</h2>
+
+<table class="table table-hover table-bordered container text-center">
+    <tr>
+        <th>cognome</th>
+        <th>nome</th>
+        <th>indirizzo</th>
+        <th>citta</th>
+        <th>cap</th>
+        <th>codicediscale</th>
+       
+    </tr>
+
+    @foreach(progettomvceEsame.Models.Anagrafica a in Model)
+            {
+                <tr>
+                    <td>@a.cognome</td>
+                    <td>@a.nome</td>
+                    <td>@a.indirizzo</td>
+                    <td>@a.citta</td>
+                    <td>@a.cap</td>
+                    <td>@a.codicefiscale</td>
+
+                </tr>
+            }
+    </table>
+
+  <div>
+    @Html.ActionLink("inserisci nuovo trasgressore", "Create")
+</div>

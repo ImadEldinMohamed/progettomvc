@@ -1,0 +1,46 @@
+﻿@model IEnumerable<progettomvceEsame.Models.Verbale>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>LISTA DI TUTTI I VERBALI</h2>
+
+
+    <table class="table table-hover table-bordered container text-center">
+        <tr>
+            <th>IDverbale</th>
+            <th>dataviolazione</th>
+            <th>indirizzoViolazione</th>
+            <th>nominativo_agente</th>
+            <th>DataTrascrizioneVerbale</th>
+            <th>importo</th>
+            <th>DecurtamentoPunti</th>
+            <th>IDanagrafica</th>
+            <th>IDviolazione</th>
+            
+
+
+        </tr>
+
+        @foreach (progettomvceEsame.Models.Verbale v in Model)
+        {
+            <tr>
+                <td>@v.IDverbale</td>
+                <td>@v.dataviolazione</td>
+                <td>@v.indirizzoViolazione</td>
+                <td>@v.nominativo_agente</td>
+                <td>@v.DataTrascrizioneVerbale</td>
+                <td>@v.importo</td>
+                <td>@v.DecurtamentoPunti</td>
+                <td>@v.IDanagrafica</td>
+                <td>@v.IDviolazione</td>
+
+
+            </tr>
+        }
+    </table>
+
+    <div>
+        @Html.ActionLink("inserisci nuovo verbale", "Create")
+    </div>

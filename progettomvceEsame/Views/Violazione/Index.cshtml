@@ -1,0 +1,29 @@
+﻿@model IEnumerable<progettomvceEsame.Models.Violazione>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LISTA VIOLAZIONI</h2>
+
+<table class="table table-hover table-bordered container text-center">
+    <tr>
+        <th>IDviolazione</th>
+        <th>descrizione</th>
+       
+
+    </tr>
+
+    @foreach (progettomvceEsame.Models.Violazione v in Model)
+    {
+        <tr>
+            <td>@v.IDviolazione</td>
+            <td>@v.descrizione</td>
+            
+
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("inserisci nuova violazione", "Create")
+</div>
